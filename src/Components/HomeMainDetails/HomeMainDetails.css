@@ -1,0 +1,18 @@
+.activity-title {
+    background-color: darkgreen;
+    width: 200px;
+    height: 40px;
+    position: relative;
+    top: -38px;
+    color: blanchedalmond;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.home-container a{
+    text-decoration: none ;
+}
+.home-container p:hover{
+    background-color:black;
+    color: tomato;
+}
