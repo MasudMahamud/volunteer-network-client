@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './NavBar.css';
 import Logo from '../../../Image/logos/mainLogo.png'
 import { Link, } from 'react-router-dom';
 import { Nav, Navbar, Container } from 'react-bootstrap';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { UserContext } from '../../../App';
 
 const NavBar = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [isAdmin, setIsIsAdmin] = useState(false);
+
+    useEffect(() => {
+        fetch('http://localhost:4000/isAdmin', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: loggedInUser.email })
+        })
+            .then(response => response.json())
+            .then(data => setIsIsAdmin(data))
+    }, [])
+
+
     return (
         <div className="my-nav row">
             <Navbar bg="light" fixed='top' expand="lg">
@@ -22,17 +37,14 @@ const NavBar = () => {
 
                             <Link to="/event">Events</Link>
 
-                            <Link to="/#">Blog </Link>
+                            <Link to="/blog">Blog </Link>
 
-                            <Link to="/#">
-                                <span className="register"> Register </span>
-                            </Link>
-                            <Link to="/#">
-                                <span className="admin">Admin</span>
-                            </Link>
-                            <Link to="/#">
-                                <p className="admin"> <AccountCircleIcon />  </p>
-                            </Link>
+                            <Link to="/login">Login </Link>
+                            {isAdmin &&
+                                <Link to="/dashboard">
+                                    <span className="admin">Admin</span>
+                                </Link>
+                            }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

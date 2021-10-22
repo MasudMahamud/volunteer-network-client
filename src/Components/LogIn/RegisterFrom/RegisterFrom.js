@@ -1,15 +1,18 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import './RegisterFrom.css';
 import Button from '@mui/material/Button';
 import NavBar from '../../Shared/NavBar/NavBar';
 import { UserContext } from '../../../App';
 import { useParams } from 'react-router-dom';
 import { useForm } from "react-hook-form";
+import { useHistory } from 'react-router-dom';
 
 
 const RegisterFrom = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const { title } = useParams();
+    const history = useHistory();
+
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = data => {
@@ -24,7 +27,10 @@ const RegisterFrom = () => {
         })
             .then(res => res.json())
             .then(data => {
-                alert('Registration complete!');
+                if (data === false) {
+                    alert('Registration complete!');
+                    history.push("/home");
+                }
             })
     }
 
@@ -61,6 +67,7 @@ const RegisterFrom = () => {
                         </div>
                     </form>
                 </div>
+                <NavBar></NavBar>
             </div>
         </section>
     );

@@ -11,6 +11,7 @@ import { createContext, useState } from 'react'
 import RegisterFrom from "./Components/LogIn/RegisterFrom/RegisterFrom";
 import PrivateRoute from "./Components/LogIn/PrivateRoute/PrivateRoute";
 import Events from "./Components/Events/Events";
+import Blog from "./Components/Blog/Blog";
 
 export const UserContext = createContext();
 
@@ -36,6 +37,10 @@ function App() {
 
           <Route path="/event">
             <Events></Events>
+          </Route>
+
+          <Route path="/blog">
+            <Blog></Blog>
           </Route>
 
             <Route path="/register">
