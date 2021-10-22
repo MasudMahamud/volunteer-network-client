@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
-import FakeData from '../FakeData/FakeData';
+import React, { useEffect, useState } from 'react';
 import HomeMainDetails from '../HomeMainDetails/HomeMainDetails';
 
 const HomeMain = () => {
-    const [item, setItem] = useState(FakeData)
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:4000/activity')
+            .then(res => res.json())
+            .then(data => setItems(data))
+    }, [])
+    
     return (
         <section className="container my-5">
             <div className="row">
-            {
-                item.map(info => <HomeMainDetails info={info} key={info.id}></HomeMainDetails>)
-            }
+                {
+                    items.map(info => <HomeMainDetails info={info} key={info.id}></HomeMainDetails>)
+                }
             </div>
         </section>
     );

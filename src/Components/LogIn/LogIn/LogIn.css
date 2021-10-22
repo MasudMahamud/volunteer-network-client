@@ -1,0 +1,14 @@
+.login-container{
+    background-image: url('../../../Image/login-page-bg.jpg');
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+    height:100vh
+}
+.logIn-box{
+   padding-top: 180px;
+}
+.logIn-box h3{
+    margin-bottom: 40px;
+    color:#ddd
+ }

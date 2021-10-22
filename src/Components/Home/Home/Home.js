@@ -2,17 +2,14 @@ import React from 'react';
 import './Home.css';
 import Header from '../Header/Header';
 import HomeMain from '../../HomeMain/HomeMain';
-import Footer from '../Footer/Footer';
+import Footer from '../../Shared/Footer/Footer';
 
 const Home = () => {
     return (
-        <main>
-           
-               
+        <main>          
                 <Header></Header>
                 <HomeMain></HomeMain>
-                <Footer></Footer>
-           
+                <Footer></Footer>      
         </main>
     );
 };
