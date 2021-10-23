@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SideBar from '../SideBar/SideBar';
+import VolunteerChartTable from '../VolunteerChartTable/VolunteerChartTable';
 
 const AllVolunteer = () => {
+    const [volunteer, setVolunteer] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:4000/allVolunteer')
+            .then(res => res.json())
+            .then(data => setVolunteer(data))
+    }, [])
     return (
         <div className="container">
             <div className="row">
@@ -9,7 +17,8 @@ const AllVolunteer = () => {
                     <SideBar></SideBar>
                 </div>
                 <div className="col-md-10">
-                    <h2> all volunteer </h2>
+                <h6> All Volunteer </h6> <hr />
+                    <VolunteerChartTable volunteer={volunteer}></VolunteerChartTable>
                 </div>
             </div>
         </div>

@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import BlogDetails from '../BlogDetails/BlogDetails';
 import Footer from '../Shared/Footer/Footer';
 import NavBar from '../Shared/NavBar/NavBar';
 
 const Blog = () => {
+    const [blog, setBlog] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:4000/blog')
+            .then(res => res.json())
+            .then(data => setBlog(data))
+    }, [])
+
     return (
-        <div>
+        <div className="container">
             <NavBar></NavBar>
-            <h2 className="mt-5 p-5">HERE IS THE BLOG POST</h2>
+            <div className="row mt-5 pt-5">
+            {
+                    blog.map(data => <BlogDetails key={blog._id} data={data}> </BlogDetails>)
+                }
+            </div>
             <Footer></Footer>
         </div>
     );
