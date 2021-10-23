@@ -6,6 +6,7 @@ import { UserContext } from '../../../App';
 import { useParams } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { useHistory } from 'react-router-dom';
+import Footer from '../../Shared/Footer/Footer';
 
 
 const RegisterFrom = () => {
@@ -38,8 +39,8 @@ const RegisterFrom = () => {
     return (
         <section className="reg-form">
             <div className="container">
+                <NavBar></NavBar>
                 <div className="row">
-                    <NavBar></NavBar>
                     <h4 className='pt-5 mt-5'> REGISTER AS A VOLUNTEER</h4>
                     <form className="rounded" onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-group">
@@ -67,7 +68,7 @@ const RegisterFrom = () => {
                         </div>
                     </form>
                 </div>
-                <NavBar></NavBar>
+                <Footer></Footer>
             </div>
         </section>
     );

@@ -12,6 +12,10 @@ import RegisterFrom from "./Components/LogIn/RegisterFrom/RegisterFrom";
 import PrivateRoute from "./Components/LogIn/PrivateRoute/PrivateRoute";
 import Events from "./Components/Events/Events";
 import Blog from "./Components/Blog/Blog";
+import Dashboard from "./Components/Dashboard/Dashboard/Dashboard";
+import AllVolunteer from "./Components/Dashboard/AllVolunteer/AllVolunteer";
+import AddEvent from "./Components/Dashboard/AddEvent/AddEvent";
+import AddBlog from "./Components/Dashboard/AddBlog/AddBlog";
 
 export const UserContext = createContext();
 
@@ -26,29 +30,37 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-
             <Route path="/event">
               <Events></Events>
             </Route>
-
             <PrivateRoute path="/info/:title">
-            <RegisterFrom></RegisterFrom>
-          </PrivateRoute>
-
-          <Route path="/event">
-            <Events></Events>
-          </Route>
-
-          <Route path="/blog">
-            <Blog></Blog>
-          </Route>
-
+              <RegisterFrom></RegisterFrom>
+            </PrivateRoute>
+            <Route path="/event">
+              <Events></Events>
+            </Route>
+            <Route path="/blog">
+              <Blog></Blog>
+            </Route>
             <Route path="/register">
               <LogIn></LogIn>
             </Route>
             <Route path="/login">
-            <LogIn></LogIn>
-          </Route>
+              <LogIn></LogIn>
+            </Route>
+            <Route path="/dashboard">
+              <Dashboard></Dashboard>
+            </Route>
+            <Route path="/allVolunteer">
+              <AllVolunteer></AllVolunteer>
+            </Route>
+            <Route path="/addEvent">
+              <AddEvent></AddEvent>
+            </Route>
+            <Route path="/addBlog">
+              <AddBlog></AddBlog>
+            </Route>
+
             <Route exact path="/">
               <Home></Home>
             </Route>

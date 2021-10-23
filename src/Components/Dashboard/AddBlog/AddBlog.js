@@ -1,7 +1,7 @@
 import React from 'react';
 import SideBar from '../SideBar/SideBar';
 
-const AllVolunteer = () => {
+const AddBlog = () => {
     return (
         <div className="container">
             <div className="row">
@@ -9,11 +9,11 @@ const AllVolunteer = () => {
                     <SideBar></SideBar>
                 </div>
                 <div className="col-md-10">
-                    <h2> all volunteer </h2>
+                    <h2> add blog </h2>
                 </div>
             </div>
         </div>
     );
 };
 
-export default AllVolunteer;
+export default AddBlog;
