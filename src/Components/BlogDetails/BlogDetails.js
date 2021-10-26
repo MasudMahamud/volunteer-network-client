@@ -8,7 +8,7 @@ const BlogDetails = ({ data }) => {
                     {
                         data.image ? <img style={{ maxWidth: '250px' }} src={`data:image/png;base64,${data.image.img}`} alt="" />
                             :
-                            <img style={{ maxWidth: '200px' }} className="img-fluid mb-3" src={`http://localhost:4000/${data.img}`} alt="" />
+                            <img style={{ maxWidth: '200px' }} className="img-fluid mb-3" src={`https://thawing-headland-58770.herokuapp.com/${data.img}`} alt="" />
                     }
                 </div>
                 <div className="doctor-data text-center p-4">

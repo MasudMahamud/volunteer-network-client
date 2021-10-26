@@ -5,7 +5,7 @@ const HomeMain = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:4000/activity')
+        fetch('https://thawing-headland-58770.herokuapp.com/activity')
             .then(res => res.json())
             .then(data => setItems(data))
     }, [])

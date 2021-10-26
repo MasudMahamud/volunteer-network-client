@@ -19,7 +19,7 @@ const RegisterFrom = () => {
     const onSubmit = data => {
         const volunteerDetails = { ...loggedInUser, volunteerInfo: data, addTime: new Date() };
 
-        fetch('http://localhost:4000/addVolunteer', {
+        fetch('https://thawing-headland-58770.herokuapp.com/addVolunteer', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

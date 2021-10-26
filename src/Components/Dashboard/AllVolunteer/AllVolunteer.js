@@ -6,7 +6,7 @@ const AllVolunteer = () => {
     const [volunteer, setVolunteer] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:4000/allVolunteer')
+        fetch('https://thawing-headland-58770.herokuapp.com/allVolunteer')
             .then(res => res.json())
             .then(data => setVolunteer(data))
     }, [])

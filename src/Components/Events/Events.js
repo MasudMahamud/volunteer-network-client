@@ -13,7 +13,7 @@ const Events = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     useEffect(() => {
-        fetch('http://localhost:4000/VolunteerActivity?email=' + loggedInUser.email)
+        fetch('https://thawing-headland-58770.herokuapp.com/VolunteerActivity?email=' + loggedInUser.email)
             .then(res => res.json())
             .then(data => setEvents(data))
     }, [])

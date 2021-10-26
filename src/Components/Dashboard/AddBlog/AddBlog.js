@@ -22,7 +22,7 @@ const AddBlog = () => {
         formData.append('title', info.title);
         formData.append('date', info.date);
 
-        fetch('http://localhost:4000/addBlog', {
+        fetch('https://thawing-headland-58770.herokuapp.com/addBlog', {
             method: 'POST',
             body: formData
         })
